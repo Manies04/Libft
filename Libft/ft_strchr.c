@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tiade-al <tiade-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/12 15:16:58 by tiade-al          #+#    #+#             */
-/*   Updated: 2024/04/14 13:20:59 by tiade-al         ###   ########.fr       */
+/*   Created: 2024/04/14 12:51:36 by tiade-al          #+#    #+#             */
+/*   Updated: 2024/04/14 13:28:35 by tiade-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+char	*ft_strchr(const char *s, int i)
 {
-	size_t	dl;
-	size_t	sl;
-
-	dl = 0;
-	sl = 0;
-	while (dst[dl] && dl < size)
-		dl++;
-	while (src[sl] && (dl + sl + 1) < size)
+	while (*s != '\0')
 	{
-		dst[dl + sl] = src[sl];
-		sl++;
+		if (*s == i)
+			return ((char *)s);
+		s++;
 	}
-	if (dl < size)
-		dst[dl + sl] = '\0';
-	return (dl + ft_strlen(src));
+	if (i == '\0')
+		return ((char *)s);
+	return (NULL);
 }

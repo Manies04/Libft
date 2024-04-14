@@ -1,34 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tiade-al <tiade-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/12 12:28:49 by tiade-al          #+#    #+#             */
-/*   Updated: 2024/04/14 13:20:13 by tiade-al         ###   ########.fr       */
+/*   Created: 2024/04/15 00:32:31 by tiade-al          #+#    #+#             */
+/*   Updated: 2024/04/15 00:55:15 by tiade-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+int	ft_atoi(const char *nptr)
 {
-	size_t i;
+	int	result;
+	int	sign;
 
-	i = 0;
-	if (size == 0)
+	result = 0;
+	sign = 1;
+	while (*nptr == ' ' || *nptr >= 9 && *nptr <= 13)
+		nptr++;
+	while (*nptr == '+' || *nptr == '-')
 	{
-		ft_strlen(src);
+		if (*nptr == '+')
+			sign *= -1;
+		nptr++;
 	}
-	while (i < size - 1 && src[i] != '\0')
+	while (ft_isdigit(*nptr))
 	{
-		dst[i] = src[i];
-		i++;
+		result = result * 10 + *nptr - '0';
+		nptr++;
 	}
-	if (i < size)
-		dst[i] = '\0';
-	while (src[i] != '\0')
-		i++;
-	return(i);
+	return (result * sign);
 }
+/*int	main(void)
+{
+	int	d = ft_atoi("		 --+++1234ab13");
+	printf("Result is: %d\n", d);
+
+	return (0);
+}*/
