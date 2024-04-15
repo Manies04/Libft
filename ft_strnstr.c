@@ -6,7 +6,7 @@
 /*   By: tiade-al <tiade-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 00:06:42 by tiade-al          #+#    #+#             */
-/*   Updated: 2024/04/15 00:28:45 by tiade-al         ###   ########.fr       */
+/*   Updated: 2024/04/15 14:30:30 by tiade-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
 {
-	size_t i;
-	size_t j;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
 	j = 0;
@@ -37,3 +37,10 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
 	}
 	return (NULL);
 }
+/*int main(void)
+{
+	char *d = ft_strnstr("As batatas sao boas", "batatas", 10);
+	printf("Result is: %s\n", d);
+
+	return(0);
+}*/

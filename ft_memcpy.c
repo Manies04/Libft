@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tiade-al <tiade-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/10 12:35:47 by tiade-al          #+#    #+#             */
-/*   Updated: 2024/04/10 13:02:31 by tiade-al         ###   ########.fr       */
+/*   Created: 2024/04/10 16:00:02 by tiade-al          #+#    #+#             */
+/*   Updated: 2024/04/15 10:41:42 by tiade-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int	i)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	if ((i >= 'a' && i <= 'z') || (i >= 'A' && i <= 'Z'))
-		return(1);
-	return(0);
-}
-/* int	main(void)
-{
-	#include<stdio.h>
+	char		*d;
+	const char	*s;
+	size_t		i;
 
-	int	result = ft_isalpha('a');
-	printf("Result is: %d\n", result);
-} */
+	i = 0;
+	d = (char *)dest;
+	s = (char *)src;
+	while (i < n)
+	{
+		d[i] = s[i];
+		i++;
+	}
+	return (dest);
+}

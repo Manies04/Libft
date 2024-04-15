@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tiade-al <tiade-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/10 12:36:29 by tiade-al          #+#    #+#             */
-/*   Updated: 2024/04/10 13:02:15 by tiade-al         ###   ########.fr       */
+/*   Created: 2024/04/12 12:28:49 by tiade-al          #+#    #+#             */
+/*   Updated: 2024/04/15 10:55:50 by tiade-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int	i)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	if (i >= '0' && i <= '9')
-		return(1);
-	return(0);
-}
-/* int	main(void)
-{
-	#include<stdio.h>
+	size_t	i;
 
-	int	result = ft_isdigit('4');
-	printf("Result is: %d\n", result);
-} */
+	i = 0;
+	if (size == 0)
+	{
+		ft_strlen(src);
+	}
+	while (i < size - 1 && src[i] != '\0')
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	if (i < size)
+		dst[i] = '\0';
+	while (src[i] != '\0')
+		i++;
+	return (i);
+}

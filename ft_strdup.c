@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tiade-al <tiade-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/10 12:57:14 by tiade-al          #+#    #+#             */
-/*   Updated: 2024/04/11 11:38:51 by tiade-al         ###   ########.fr       */
+/*   Created: 2024/04/15 12:09:51 by tiade-al          #+#    #+#             */
+/*   Updated: 2024/04/15 13:55:26 by tiade-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(const char *str)
+char	*ft_strdup(const char *s)
 {
+	char	*str;
 	int	i;
 
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
+	i = ft_strlen(s) + 1;
+	str = malloc(i);
+	if (str == NULL)
+		return (NULL);
+	ft_memcpy(str, s, i);
+	return (str);
 }
-/* int	main(void)
+/*int	main(void)
 {
-	#include<stdio.h>
+	char *d = ft_strdup("Batata");
+	printf("Result is: %s\n", d);
 
-	int	result = ft_strlen("Batata");
-	printf("Result is: %d\n", result);
-} */
+	return (0);
+}*/

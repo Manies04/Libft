@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tiade-al <tiade-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/10 12:35:35 by tiade-al          #+#    #+#             */
-/*   Updated: 2024/04/11 14:15:20 by tiade-al         ###   ########.fr       */
+/*   Created: 2024/04/14 12:51:36 by tiade-al          #+#    #+#             */
+/*   Updated: 2024/04/15 10:54:03 by tiade-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int	i)
+char	*ft_strchr(const char *s, int i)
 {
-	if ((i >= 'a' && i <= 'z') || (i >= 'A' && i <= 'Z') || (i >= '0' && i <= '9'))
-		return(1);
-	return(0);
+	while (*s != '\0')
+	{
+		if (*s == i)
+			return ((char *)s);
+		s++;
+	}
+	if (i == '\0')
+		return ((char *)s);
+	return (NULL);
 }
-/* int	main(void)
-{
-	int	result = ft_isalnum('4');
-	printf("Result is: %d\n", result);
-} */

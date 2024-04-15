@@ -1,34 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tiade-al <tiade-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/12 12:28:49 by tiade-al          #+#    #+#             */
-/*   Updated: 2024/04/14 13:20:13 by tiade-al         ###   ########.fr       */
+/*   Created: 2024/04/14 17:45:18 by tiade-al          #+#    #+#             */
+/*   Updated: 2024/04/15 10:54:55 by tiade-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t i;
+	size_t	i;
+	int		c;
 
+	c = 0;
 	i = 0;
-	if (size == 0)
+	while (s1[c] != '\0' && s2[c] != '\0' && i < n)
 	{
-		ft_strlen(src);
-	}
-	while (i < size - 1 && src[i] != '\0')
-	{
-		dst[i] = src[i];
+		if (s1[c] < s2[c])
+			return (-1);
+		if (s1[c] > s2[c])
+			return (1);
+		c++;
 		i++;
 	}
-	if (i < size)
-		dst[i] = '\0';
-	while (src[i] != '\0')
-		i++;
-	return(i);
+	return (0);
 }
+/*int	main(void)
+{
+	int	d = ft_strncmp("BAtata", "Batata", 2);
+	printf("The Result is: %d\n", d);
+
+	return (0);
+}*/

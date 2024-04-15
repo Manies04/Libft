@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tiade-al <tiade-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/14 12:47:54 by tiade-al          #+#    #+#             */
-/*   Updated: 2024/04/14 13:21:26 by tiade-al         ###   ########.fr       */
+/*   Created: 2024/04/15 11:01:34 by tiade-al          #+#    #+#             */
+/*   Updated: 2024/04/15 12:05:29 by tiade-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_tolower(int i)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	if (i >= 'A' && i <= 'Z')
-	{
-		i += 32;
-	}
+	size_t	i;
+
+	i = malloc(nmemb * size);
+	if (!i)
+		return (NULL);
+	ft_bzero(i, nmemb * size);
 	return (i);
 }

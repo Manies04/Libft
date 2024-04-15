@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tiade-al <tiade-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/10 12:45:21 by tiade-al          #+#    #+#             */
-/*   Updated: 2024/04/10 13:01:56 by tiade-al         ###   ########.fr       */
+/*   Created: 2024/04/10 12:35:47 by tiade-al          #+#    #+#             */
+/*   Updated: 2024/04/15 10:35:48 by tiade-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int	i)
+int	ft_isalpha(int i)
 {
-	if (i >= 32 && i <= 126)
-		return(1);
-	return(0);
+	if ((i >= 'a' && i <= 'z') || (i >= 'A' && i <= 'Z'))
+		return (1);
+	return (0);
 }
 /* int	main(void)
 {
 	#include<stdio.h>
 
-	int	result = ft_isprint('a');
+	int	result = ft_isalpha('a');
 	printf("Result is: %d\n", result);
 } */

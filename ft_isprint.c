@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tiade-al <tiade-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/10 16:00:02 by tiade-al          #+#    #+#             */
-/*   Updated: 2024/04/11 14:17:24 by tiade-al         ###   ########.fr       */
+/*   Created: 2024/04/10 12:45:21 by tiade-al          #+#    #+#             */
+/*   Updated: 2024/04/15 10:36:29 by tiade-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+int	ft_isprint(int i)
 {
-	char	*d;
-	const char	*s;
-	size_t	i;
-	
-	i = 0;
-	d = (char *)dest;
-	s = (char *)src;
-	while (i < n)
-	{
-		d[i] = s[i];
-		i++;
-	}
-	return(dest);
+	if (i >= 32 && i <= 126)
+		return (1);
+	return (0);
 }
+/* int	main(void)
+{
+	#include<stdio.h>
+
+	int	result = ft_isprint('a');
+	printf("Result is: %d\n", result);
+} */

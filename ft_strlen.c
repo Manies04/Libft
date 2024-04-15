@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tiade-al <tiade-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/10 13:36:32 by tiade-al          #+#    #+#             */
-/*   Updated: 2024/04/11 16:44:18 by tiade-al         ###   ########.fr       */
+/*   Created: 2024/04/10 12:57:14 by tiade-al          #+#    #+#             */
+/*   Updated: 2024/04/15 13:30:40 by tiade-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memset(void *str, int c, size_t len)
+int	ft_strlen(const char *str)
 {
-	char	*p;
-	
-	p = (char *)str;
-	while (len > 0)
-	{
-		p[len - 1] = c;
-		len--;
-	}
-	return(str);
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
 }
+/*int	main(void)
+{
+	#include<stdio.h>
+
+	int	result = ft_strlen("Batata");
+	printf("Result is: %d\n", result);
+}*/

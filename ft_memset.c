@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tiade-al <tiade-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/14 17:12:00 by tiade-al          #+#    #+#             */
-/*   Updated: 2024/04/14 17:42:13 by tiade-al         ###   ########.fr       */
+/*   Created: 2024/04/10 13:36:32 by tiade-al          #+#    #+#             */
+/*   Updated: 2024/04/15 10:53:50 by tiade-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int i)
+void	*ft_memset(void *str, int c, size_t len)
 {
-	int	len;
+	char	*p;
 
-	len = ft_strlen(s);
-	while (len >= 0)
+	p = (char *)str;
+	while (len > 0)
 	{
-		if (s[len] == i)
-			return ((char *)&s[len]);
+		p[len - 1] = c;
 		len--;
 	}
-	if (i == '\0')
-		return ((char *)s);
-	return (NULL);
+	return (str);
 }
