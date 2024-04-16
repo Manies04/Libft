@@ -6,7 +6,7 @@
 #    By: tiade-al <tiade-al@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/15 11:41:01 by tiade-al          #+#    #+#              #
-#    Updated: 2024/04/15 14:10:20 by tiade-al         ###   ########.fr        #
+#    Updated: 2024/04/16 16:29:24 by tiade-al         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,8 +36,6 @@ files = ft_bzero.c\
 		ft_calloc.c\
 		ft_strdup.c\
 		ft_substr.c\
-		
-
 
 Compiler = cc
 
@@ -45,10 +43,10 @@ CmpFlags = -Wall -Wextra -Werror
 
 OFILES = $(files:.c=.o)
 
-NAME = $(OUTN)
+NAME = $(Library)
 
 $(NAME):
-	$(Compiler) $(CmpFlags) -c -I/
+	$(Compiler) $(CmpFlags) -c $(files)-I./
 	ar -rc $(Library) $(OFILES)
 
 all: $(NAME)

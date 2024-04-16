@@ -6,7 +6,7 @@
 /*   By: tiade-al <tiade-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 00:32:31 by tiade-al          #+#    #+#             */
-/*   Updated: 2024/04/15 00:55:15 by tiade-al         ###   ########.fr       */
+/*   Updated: 2024/04/16 16:32:19 by tiade-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_atoi(const char *nptr)
 
 	result = 0;
 	sign = 1;
-	while (*nptr == ' ' || *nptr >= 9 && *nptr <= 13)
+	while (*nptr == ' ' || (*nptr >= 9 && *nptr <= 13))
 		nptr++;
 	while (*nptr == '+' || *nptr == '-')
 	{

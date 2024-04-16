@@ -6,7 +6,7 @@
 /*   By: tiade-al <tiade-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 13:02:55 by tiade-al          #+#    #+#             */
-/*   Updated: 2024/04/15 14:10:08 by tiade-al         ###   ########.fr       */
+/*   Updated: 2024/04/16 17:03:01 by tiade-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
+#include <string.h>
 
 void	ft_bzero(void *s, size_t n);
 int		ft_isalnum(int i);
