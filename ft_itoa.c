@@ -1,16 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tiade-al <tiade-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/15 00:32:31 by tiade-al          #+#    #+#             */
-/*   Updated: 2024/04/17 15:56:49 by tiade-al         ###   ########.fr       */
+/*   Created: 2024/04/17 15:45:14 by tiade-al          #+#    #+#             */
+/*   Updated: 2024/04/17 16:07:10 by tiade-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+char	*ft_itoa(int n)
+{
+	int		sign;
+	char	result;
+
+	result = 0;
+	sign = 1;
+	if (n < 0)
+	{
+		sign *= -1;
+		n *= -1;
+	}
+	while (n)
+	{
+		result = result / 10;
+		chr_atual = n + '0';
+	}
+}
+
 
 int	ft_atoi(const char *nptr)
 {
@@ -34,10 +54,3 @@ int	ft_atoi(const char *nptr)
 	}
 	return (result * sign);
 }
-/*int	main(void)
-{
-	int	d = ft_atoi("		 --+++1234ab13");
-	printf("Result is: %d\n", d);
-
-	return (0);
-}*/

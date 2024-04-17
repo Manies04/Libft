@@ -6,7 +6,7 @@
 /*   By: tiade-al <tiade-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 12:09:51 by tiade-al          #+#    #+#             */
-/*   Updated: 2024/04/15 13:55:26 by tiade-al         ###   ########.fr       */
+/*   Updated: 2024/04/17 10:36:44 by tiade-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_strdup(const char *s)
 {
 	char	*str;
-	int	i;
+	int		i;
 
 	i = ft_strlen(s) + 1;
 	str = malloc(i);

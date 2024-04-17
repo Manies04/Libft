@@ -1,44 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tiade-al <tiade-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/12 12:28:49 by tiade-al          #+#    #+#             */
-/*   Updated: 2024/04/17 15:38:34 by tiade-al         ###   ########.fr       */
+/*   Created: 2024/04/17 11:15:13 by tiade-al          #+#    #+#             */
+/*   Updated: 2024/04/17 13:09:53 by tiade-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	i;
+	int	i;
+	int j;
+	char *str;
 
 	i = 0;
-	if (size == 0)
+	j = 0;
+	str = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (str == NULL)
+		return (NULL);
+	while (s1[i])
 	{
-		i = ft_strlen(src);
-	}
-	while (i < size - 1 && src[i] != '\0')
-	{
-		dst[i] = src[i];
+		str[i] = s1[i];
 		i++;
 	}
-	if (i < size)
-		dst[i] = '\0';
-	while (src[i] != '\0')
-		i++;
-	return (i);
+	while (s2[j])
+	{
+		str[i + j] = s2[j];
+		j++;
+	}
+	str[i + j] = '\0';
+	return (str);
 }
 // int main(void)
 // {
-// 	char *dest;
-// 	size_t output;
-// 	output = ft_strlcpy(dest, "Cenoura", 8);
-// 	ft_print_result(ft_strlcpy(dest, "lorem ipsum dolor sit amet", 0));
-// 	write(1, "\n", 1);
-// 	write(1, dest, 15);
-// 	return(0);
+// 	char *d;
+// 	d = ft_strjoin("fe", "liz");
+// 	printf("Result is: %s\n", d);
+// 	return (0);
 // }

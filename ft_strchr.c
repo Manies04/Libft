@@ -6,7 +6,7 @@
 /*   By: tiade-al <tiade-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 12:51:36 by tiade-al          #+#    #+#             */
-/*   Updated: 2024/04/15 10:54:03 by tiade-al         ###   ########.fr       */
+/*   Updated: 2024/04/17 14:49:18 by tiade-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,16 @@
 
 char	*ft_strchr(const char *s, int i)
 {
-	while (*s != '\0')
+	int	a;
+
+	a = 0;
+	while (s[a] != '\0')
 	{
-		if (*s == i)
-			return ((char *)s);
-		s++;
+		if (s[a] == i)
+			return ((char *)(s + a));
+		a++;
 	}
 	if (i == '\0')
-		return ((char *)s);
+		return ((char *)(s + a));
 	return (NULL);
 }
