@@ -6,7 +6,7 @@
 /*   By: tiade-al <tiade-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 11:15:13 by tiade-al          #+#    #+#             */
-/*   Updated: 2024/04/17 13:09:53 by tiade-al         ###   ########.fr       */
+/*   Updated: 2024/04/18 00:22:32 by tiade-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int	i;
-	int j;
-	char *str;
+	int		i;
+	int		j;
+	char	*str;
 
 	i = 0;
 	j = 0;

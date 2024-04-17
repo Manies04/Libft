@@ -6,7 +6,7 @@
 #    By: tiade-al <tiade-al@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/15 11:41:01 by tiade-al          #+#    #+#              #
-#    Updated: 2024/04/17 15:46:40 by tiade-al         ###   ########.fr        #
+#    Updated: 2024/04/18 00:03:42 by tiade-al         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,6 @@ files = ft_bzero.c\
 		ft_substr.c\
 		ft_strjoin.c\
 		ft_strtrim.c\
-		
 		ft_itoa.c\
 
 Compiler = cc

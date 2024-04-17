@@ -6,7 +6,7 @@
 /*   By: tiade-al <tiade-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 15:45:14 by tiade-al          #+#    #+#             */
-/*   Updated: 2024/04/17 16:07:10 by tiade-al         ###   ########.fr       */
+/*   Updated: 2024/04/18 00:50:30 by tiade-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,11 @@ char	*ft_itoa(int n)
 	}
 	while (n)
 	{
-		result = result / 10;
+		result = n / 10;
 		chr_atual = n + '0';
 	}
 }
-
-
-int	ft_atoi(const char *nptr)
+/*int	ft_atoi(const char *nptr)
 {
 	int	result;
 	int	sign;
@@ -53,4 +51,4 @@ int	ft_atoi(const char *nptr)
 		nptr++;
 	}
 	return (result * sign);
-}
+}*/
