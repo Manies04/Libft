@@ -6,49 +6,60 @@
 /*   By: tiade-al <tiade-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 15:45:14 by tiade-al          #+#    #+#             */
-/*   Updated: 2024/04/18 00:50:30 by tiade-al         ###   ########.fr       */
+/*   Updated: 2024/04/19 00:20:19 by tiade-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static unsigned int	ft_number_size(int number)
+{
+	unsigned int	len;
+
+	len = 0;
+	if (number == 0)
+		return (1);
+	if (number < 0)
+		len += 1;
+	while (number != 0)
+	{
+		number /= 10;
+		len++;
+	}
+	return (len);
+}
+
 char	*ft_itoa(int n)
 {
-	int		sign;
-	char	result;
+	char			*str;
+	unsigned int	num;
+	unsigned int	len;
 
-	result = 0;
-	sign = 1;
-	if (n < 0)
+	len = ft_number_size(n);
+	str = (char *)malloc(sizeof(char) * (len + 1));
+	if (str == NULL)
+		return (NULL);
+	if (num < 0)
 	{
-		sign *= -1;
-		n *= -1;
+		str[0] = '-';
+		num = -n;
 	}
-	while (n)
+	else
+		num = n;
+	if (num == 0)
+		str[0] = '0';
+	str[len] = '\0';
+	while (num != 0)
 	{
-		result = n / 10;
-		chr_atual = n + '0';
+		str[len - 1] = (num % 10) + '0';
+		num = num / 10;
+		len--;
 	}
+	return (str);
 }
-/*int	ft_atoi(const char *nptr)
+/*int main(void)
 {
-	int	result;
-	int	sign;
-
-	result = 0;
-	sign = 1;
-	while (*nptr == ' ' || (*nptr >= 9 && *nptr <= 13))
-		nptr++;
-	while (*nptr == '+' || *nptr == '-')
-	{
-		if (*nptr == '-')
-			sign *= -1;
-		nptr++;
-	}
-	while (ft_isdigit(*nptr))
-	{
-		result = result * 10 + *nptr - '0';
-		nptr++;
-	}
-	return (result * sign);
+	char	*d = ft_itoa(24);
+	printf("Result is: %s\n", d);
+	return (0);
 }*/
