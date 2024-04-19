@@ -6,7 +6,7 @@
 #    By: tiade-al <tiade-al@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/15 11:41:01 by tiade-al          #+#    #+#              #
-#    Updated: 2024/04/19 00:23:36 by tiade-al         ###   ########.fr        #
+#    Updated: 2024/04/19 15:28:32 by tiade-al         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,6 +41,7 @@ files = ft_bzero.c\
 		ft_split.c\
 		ft_itoa.c\
 		ft_strmapi.c\
+		ft_striteri.c\
 
 Compiler = cc
 

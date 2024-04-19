@@ -6,124 +6,89 @@
 /*   By: tiade-al <tiade-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 12:06:00 by tiade-al          #+#    #+#             */
-/*   Updated: 2024/04/18 17:09:18 by tiade-al         ###   ########.fr       */
+/*   Updated: 2024/04/19 14:56:20 by tiade-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	ft_freethis(char *strs)
+static size_t	ft_count(const char *s, char c)
 {
-	free(strs);
-}
-//Free the space in strs
-
-static int	ft_wordcount(char *str, char c)
-{
-	int	i;
-	int	wordc;
+	size_t	i;
+	int		b;
 
 	i = 0;
-	wordc = 0;
-	while (str[i] != '\0')
+	b = 0;
+	if (!s[b])
+		return (0);
+	while (s[b])
 	{
-		if (str[i] != c)
-		{
-			wordc++;
-			while (str[i] != c && str[i] != '\0')
-				i++;
-			if (str[i] == '\0')
-				return (wordc);
-		}
-		i++;
+		while (s[b] == c)
+			b++;
+		if (s[b])
+			i++;
+		while (s[b] != c && s[b])
+			b++;
 	}
-	return (wordc);
+	return (b);
 }
-//Counts the words on str being c the delimiter
-
-static void	ft_strcpy(char *word, char *str, char c, int j)
-{
-	int	i;
-
-	i = 0;
-	while (str[j] != '\0' && str[j] == c)
-		j++;
-	while (str[j + i] != '\0' && str[j + i] != c)
-	{
-		word[i] = str[j + i];
-		i++;
-	}
-	word[i] = '\0';
-}
-//copies a word from str to word stopping when c appears
-
-static char	*ft_stralloc(char *str, char c, int *i)
-{
-	char	*word;
-	int		j;
-
-	j = *i;
-	word = NULL;
-	while (str[*i] != '\0')
-	{
-		if (str[*i] != c)
-		{
-			while (str[*i] != '\0' && str [*i] != c)
-				*i += 1;
-			word = (char *)malloc(sizeof(char) * (*i + 1));
-			if (word == NULL)
-				return (NULL);
-			break ;
-		}
-		*i += 1;
-	}
-	ft_strcpy(word, str, c, j);
-	return (word);
-}
-//alocates memory for a word using malloc and copies the word then returns it
+/**@brief Allocates (with malloc(3)) and returns an array
+of strings obtained by splitting ’s’ using the
+character ’c’ as a delimiter. The array must end
+with a NULL pointer.
+ *@param s: The string to be split.
+c: The delimiter character.
+ *@return The array of new strings resulting from the split.
+NULL if the allocation fails.
+*/
 
 char	**ft_split(char const *s, char c)
 {
-	char	**strs;
+	size_t	len;
+	char	**l;
 	int		i;
-	int		j;
-	int		pos;
 
-	if (s == NULL)
-		return (NULL);
 	i = 0;
-	pos = 0;
-	j = ft_wordcount((char *)s, c);
-	strs = (char **)malloc(sizeof(char *) * (j + i));
-	if (strs == NULL)
-		return (NULL);
-	strs[j] = NULL;
-	while (i < j)
+	l = (char **)malloc((ft_count(s, c) + 1) * sizeof(char *));
+	if (!s || !l)
+		return (0);
+	while (*s)
 	{
-		strs[i] = ft_stralloc(((char *)s), c, &pos);
-		if (strs[i] == NULL)
+		while (*s == c && *s)
+			s++;
+		if (*s)
 		{
-			ft_freethis(strs[i]);
+			if (!ft_strchr(s, c))
+				len = ft_strlen(s);
+			else
+				len = ft_strchr(s, c) - s;
+			l[i++] = ft_substr(s, 0, len);
+			s = s + len;
 		}
-		i++;
 	}
-	return (strs);
+	l[i] = NULL;
+	return (l);
 }
-/*int main()
+/*int main(void)
 {
-	char const	*s = "Hello,world,this,is,a,test";
-	char c = ',';
-	char **result = ft_split(s, c);
+    char const *s = "Hello,world,this,is,a,test,string";
+    char c = ',';
+    char **result = ft_split(s, c);
 
-	if (result != NULL)
-	{
-		for (int i = 0; result[i] != NULL; i++)
-			printf("%s\n", result[i]);
-		for (int i = 0; result[i] != NULL; i++)
-			free(result[i]);
-		free(result);
-	}
-	else
-		printf("Failed to split the string.\n");
-	return (0);
+    if (result != NULL)
+    {
+        for (int i = 0; result[i] != NULL; i++)
+            printf("%s\n", result[i]);
+        
+        // Free the allocated memory
+        for (int i = 0; result[i] != NULL; i++)
+            free(result[i]);
+        free(result);
+    }
+    else
+    {
+        printf("Failed to split the string.\n");
+    }
+
+    return (0);
 }*/
