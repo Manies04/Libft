@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tiade-al <tiade-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/10 14:33:49 by tiade-al          #+#    #+#             */
-/*   Updated: 2024/04/20 23:28:13 by tiade-al         ###   ########.fr       */
+/*   Created: 2024/04/21 17:08:21 by tiade-al          #+#    #+#             */
+/*   Updated: 2024/04/21 17:33:58 by tiade-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/**@brief The bzero() function sets the first n bytes of the area starting at s 
- * to zero (bytes containing aq\0aq).
- *@param s: The memory block that you want to set to zero n: Number of bytes 
- *to set to zero
- *@return None
-*/
-void	ft_bzero(void *s, size_t n)
+
+/**@brief Adds the node 'new' at the beginning of the list.
+ * @param lst The address of a pointer to the first link of a list.
+ * @param new The address of a pointer to the node to be added to the list.
+ * @return None.
+ */
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	ft_memset(s, 0, n);
+	new->next = *lst;
+	*lst = new;
 }

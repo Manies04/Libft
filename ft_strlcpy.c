@@ -6,12 +6,18 @@
 /*   By: tiade-al <tiade-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 12:28:49 by tiade-al          #+#    #+#             */
-/*   Updated: 2024/04/17 15:38:34 by tiade-al         ###   ########.fr       */
+/*   Updated: 2024/04/21 01:57:34 by tiade-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/**@brief The strlcpy() function copies up to size - 1 characters from the 
+ * NUL-terminated string src to dst, NUL-terminating the result.
+ *@param dst: The destination string.
+ *@param src: The source string.
+ *@param size: The size of the destination buffer.
+ *@return The total length of the string it tried to create.
+*/
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;

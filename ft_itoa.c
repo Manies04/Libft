@@ -6,7 +6,7 @@
 /*   By: tiade-al <tiade-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 15:45:14 by tiade-al          #+#    #+#             */
-/*   Updated: 2024/04/19 14:56:39 by tiade-al         ###   ########.fr       */
+/*   Updated: 2024/04/21 01:42:46 by tiade-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ static unsigned int	ft_number_size(int number)
 	}
 	return (len);
 }
+
 /**@brief Allocates (with malloc(3)) and returns a string
 representing the integer received as an argument.
 Negative numbers must be handled.
@@ -35,7 +36,6 @@ Negative numbers must be handled.
  *@return The string representing the integer.
 NULL if the allocation fails.
 */
-
 char	*ft_itoa(int n)
 {
 	char			*str;

@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tiade-al <tiade-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/15 11:01:34 by tiade-al          #+#    #+#             */
-/*   Updated: 2024/04/21 01:34:27 by tiade-al         ###   ########.fr       */
+/*   Created: 2024/04/21 17:35:24 by tiade-al          #+#    #+#             */
+/*   Updated: 2024/04/21 17:42:49 by tiade-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/**@brief The calloc() function allocates memory for an array of nmemb elements
- * of size bytes each and returns a pointer to the allocated memory.
- *@param nmemb: Number of elements
- *@param size: Size of each element
- *@return A pointer to the allocated memory, or NULL if the request fails
-*/
-void	*ft_calloc(size_t nmemb, size_t size)
+/**@brief Counts the number of nodes in a list.
+ * @param lst The beginning of the list.
+ * @return The length of the list.
+ */
+int	ft_lstsize(t_list *lst)
 {
-	void	*i;
+	int	i;
 
-	i = malloc(nmemb * size);
-	if (!i)
-		return (NULL);
-	ft_bzero(i, nmemb * size);
+	i = 0;
+	while (lst != NULL)
+	{
+		i++;
+		lst = lst->next;
+	}
 	return (i);
 }

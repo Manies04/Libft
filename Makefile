@@ -6,7 +6,7 @@
 #    By: tiade-al <tiade-al@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/15 11:41:01 by tiade-al          #+#    #+#              #
-#    Updated: 2024/04/19 15:28:32 by tiade-al         ###   ########.fr        #
+#    Updated: 2024/04/22 00:02:47 by tiade-al         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,6 +42,17 @@ files = ft_bzero.c\
 		ft_itoa.c\
 		ft_strmapi.c\
 		ft_striteri.c\
+		ft_putchar_fd.c\
+		ft_putstr_fd.c\
+		ft_putendl_fd.c\
+		ft_putnbr_fd.c\
+
+bonus = ft_lstnew.c\
+		ft_lstadd_front.c\
+		ft_lstsize.c\
+		ft_lstlast.c\
+		ft_lstadd_back.c\
+		ft_lstdelone.c\
 
 Compiler = cc
 
@@ -49,17 +60,19 @@ CmpFlags = -Wall -Wextra -Werror
 
 OFILES = $(files:.c=.o)
 
+OBONUS = $(bonus:.c=.o)
+
 NAME = $(Library)
 
-$(NAME):
-	$(Compiler) $(CmpFlags) -c $(files)-I./
-	ar -rc $(Library) $(OFILES)
+$(NAME): $(OFILES) $(OBONUS)
+	$(Compiler) $(CmpFlags) -c $(files) $(bonus) -I./
+	ar -rc $(Library) $(OFILES) $(OBONUS)
 
 all: $(NAME)
 
 clean:
 	rm -f $(NAME)
-	rm -f $(OFILES)
+	rm -f $(OFILES) $(OBONUS)
 
 fclean: clean
 	rm -f $(NAME)

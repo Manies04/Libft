@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tiade-al <tiade-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/10 14:33:49 by tiade-al          #+#    #+#             */
-/*   Updated: 2024/04/20 23:28:13 by tiade-al         ###   ########.fr       */
+/*   Created: 2024/04/21 23:15:37 by tiade-al          #+#    #+#             */
+/*   Updated: 2024/04/21 23:21:28 by tiade-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/**@brief The bzero() function sets the first n bytes of the area starting at s 
- * to zero (bytes containing aq\0aq).
- *@param s: The memory block that you want to set to zero n: Number of bytes 
- *to set to zero
- *@return None
-*/
-void	ft_bzero(void *s, size_t n)
+/**@brief Takes as a parameter a node and frees the memory of the node's
+ * content using the function 'del' given as a parameter and free the node.
+ * The memory of 'next' must not be freed.
+ * @param lst The node to free.
+ * @param del The address of the function used to delete the content.
+ * @return None.
+ */
+void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	ft_memset(s, 0, n);
+
 }

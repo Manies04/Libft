@@ -6,7 +6,7 @@
 /*   By: tiade-al <tiade-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 12:06:00 by tiade-al          #+#    #+#             */
-/*   Updated: 2024/04/19 14:56:20 by tiade-al         ###   ########.fr       */
+/*   Updated: 2024/04/21 01:53:44 by tiade-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,16 +32,14 @@ static size_t	ft_count(const char *s, char c)
 	}
 	return (b);
 }
-/**@brief Allocates (with malloc(3)) and returns an array
-of strings obtained by splitting ’s’ using the
-character ’c’ as a delimiter. The array must end
-with a NULL pointer.
- *@param s: The string to be split.
-c: The delimiter character.
- *@return The array of new strings resulting from the split.
-NULL if the allocation fails.
-*/
 
+/**@brief Allocates (with malloc(3)) and returns an array of strings obtained
+ * by splitting 's' using the character 'c' as a delimiter. The array must be
+ * ended by a NULL pointer.
+ * @param s: The string to split.
+ * @param c: The delimiter character.
+ * @return The array of new strings resulting from the split.
+*/
 char	**ft_split(char const *s, char c)
 {
 	size_t	len;
