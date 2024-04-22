@@ -6,7 +6,7 @@
 #    By: tiade-al <tiade-al@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/15 11:41:01 by tiade-al          #+#    #+#              #
-#    Updated: 2024/04/22 00:02:47 by tiade-al         ###   ########.fr        #
+#    Updated: 2024/04/22 14:24:34 by tiade-al         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,6 +53,9 @@ bonus = ft_lstnew.c\
 		ft_lstlast.c\
 		ft_lstadd_back.c\
 		ft_lstdelone.c\
+		ft_lstclear.c\
+		ft_lstiter.c\
+		ft_lstmap.c\
 
 Compiler = cc
 

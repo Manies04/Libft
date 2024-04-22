@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tiade-al <tiade-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/21 23:15:37 by tiade-al          #+#    #+#             */
-/*   Updated: 2024/04/22 11:42:28 by tiade-al         ###   ########.fr       */
+/*   Created: 2024/04/22 13:31:09 by tiade-al          #+#    #+#             */
+/*   Updated: 2024/04/22 16:47:07 by tiade-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/**@brief Takes as a parameter a node and frees the memory of the node's
- * content using the function 'del' given as a parameter and free the node.
- * The memory of 'next' must not be freed.
- * @param lst The node to free.
- * @param del The address of the function used to delete the content.
- * @return None.
- */
-void	ft_lstdelone(t_list *lst, void (*del)(void*))
+/**@brief Iterates the list ’lst’ and applies the function ’f’ on the content
+* of each node.
+*@param lst: The address of a pointer to a node.
+*@param f: The address of the function used to iterate on the list.
+*@return None.
+*/
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	if (!lst || !del)
+	if (!lst || !f)
 		return ;
-	del(lst->content);
-	free(lst);
+	while (lst)
+	{
+		f(lst->content);
+		lst = lst->next;
+	}
 }
