@@ -6,7 +6,7 @@
 /*   By: tiade-al <tiade-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 13:02:55 by tiade-al          #+#    #+#             */
-/*   Updated: 2024/04/22 16:45:34 by tiade-al         ###   ########.fr       */
+/*   Updated: 2024/04/23 16:19:20 by tiade-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <string.h>
-
+# include <stdint.h>
 typedef struct s_list
 {
 	void			*content;

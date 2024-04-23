@@ -6,7 +6,7 @@
 /*   By: tiade-al <tiade-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 11:01:34 by tiade-al          #+#    #+#             */
-/*   Updated: 2024/04/21 01:34:27 by tiade-al         ###   ########.fr       */
+/*   Updated: 2024/04/23 16:41:11 by tiade-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,23 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*i;
 
-	i = malloc(nmemb * size);
+	if(nmemb == 0 || size == 0)
+		i = malloc(0);
+	else if ((nmemb * size) / nmemb != size)
+		return (NULL);
+	else
+		i = malloc(nmemb * size);
 	if (!i)
 		return (NULL);
-	ft_bzero(i, nmemb * size);
+	if(nmemb != 0 || size != 0)
+		ft_bzero(i, nmemb * size);
 	return (i);
 }
+
+/*int main (void)
+{
+	int  *pointer = ft_calloc(-5, -5);
+	printf("pointer: %p \n", pointer);
+	//int  *pointer2 = calloc(-5, -5);
+	//printf("pointer: %p \n", pointer2);
+}*/

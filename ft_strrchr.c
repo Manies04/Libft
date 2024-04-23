@@ -6,7 +6,7 @@
 /*   By: tiade-al <tiade-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 17:12:00 by tiade-al          #+#    #+#             */
-/*   Updated: 2024/04/21 02:01:55 by tiade-al         ###   ########.fr       */
+/*   Updated: 2024/04/23 15:57:11 by tiade-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_strrchr(const char *s, int i)
 	len = ft_strlen(s);
 	while (len >= 0)
 	{
-		if (s[len] == i)
+		if (s[len] == (char)i)
 			return ((char *)&s[len]);
 		len--;
 	}
@@ -34,3 +34,10 @@ char	*ft_strrchr(const char *s, int i)
 		return ((char *)s);
 	return (NULL);
 }
+
+/*int main()
+{
+	char d = 't';
+	d += 258;
+	printf("Result: %c\n", d);
+}*/

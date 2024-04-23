@@ -6,31 +6,31 @@
 /*   By: tiade-al <tiade-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 12:06:00 by tiade-al          #+#    #+#             */
-/*   Updated: 2024/04/21 01:53:44 by tiade-al         ###   ########.fr       */
+/*   Updated: 2024/04/23 17:02:28 by tiade-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	ft_count(const char *s, char c)
+static size_t	ft_count_words(const char *s, char c)
 {
-	size_t	i;
-	int		b;
+	size_t	num_palavras;
+	int		i;
 
+	num_palavras = 0;
 	i = 0;
-	b = 0;
-	if (!s[b])
+	if (!s)
 		return (0);
-	while (s[b])
+	while (s[i])
 	{
-		while (s[b] == c)
-			b++;
-		if (s[b])
+		while (s[i] == c)
 			i++;
-		while (s[b] != c && s[b])
-			b++;
+		if (s[i])
+			num_palavras++;
+		while (s[i] != c && s[i])
+			i++;
 	}
-	return (b);
+	return (num_palavras);
 }
 
 /**@brief Allocates (with malloc(3)) and returns an array of strings obtained
@@ -47,7 +47,7 @@ char	**ft_split(char const *s, char c)
 	int		i;
 
 	i = 0;
-	l = (char **)malloc((ft_count(s, c) + 1) * sizeof(char *));
+	l = (char **)malloc((ft_count_words(s, c) + 1) * sizeof(char *));
 	if (!s || !l)
 		return (0);
 	while (*s)
@@ -67,7 +67,7 @@ char	**ft_split(char const *s, char c)
 	l[i] = NULL;
 	return (l);
 }
-/*int main(void)
+/* int main(void)
 {
     char const *s = "Hello,world,this,is,a,test,string";
     char c = ',';
@@ -89,4 +89,4 @@ char	**ft_split(char const *s, char c)
     }
 
     return (0);
-}*/
+} */

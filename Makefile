@@ -6,7 +6,7 @@
 #    By: tiade-al <tiade-al@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/15 11:41:01 by tiade-al          #+#    #+#              #
-#    Updated: 2024/04/22 14:24:34 by tiade-al         ###   ########.fr        #
+#    Updated: 2024/04/23 16:53:57 by tiade-al         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,6 +72,9 @@ $(NAME): $(OFILES) $(OBONUS)
 	ar -rc $(Library) $(OFILES) $(OBONUS)
 
 all: $(NAME)
+
+bonus: $(OBONUS) $(BONUS)
+	ar -rc $(NAME) $(OBONUS) $(BONUS)
 
 clean:
 	rm -f $(NAME)

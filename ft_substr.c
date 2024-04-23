@@ -6,7 +6,7 @@
 /*   By: tiade-al <tiade-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 14:07:09 by tiade-al          #+#    #+#             */
-/*   Updated: 2024/04/21 02:03:18 by tiade-al         ###   ########.fr       */
+/*   Updated: 2024/04/23 17:08:43 by tiade-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,5 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 // 	printf("Result is: %s\n", d);
 // 	return (0);
 // }
-//l21 - size of char is 1
-//l28 - start 0 para cima e o j - que a len para '\0'
+// l21 - size of char is 1
+// l28 - start 0 para cima e o j - que a len para '\0'
