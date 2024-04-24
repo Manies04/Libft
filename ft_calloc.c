@@ -6,7 +6,7 @@
 /*   By: tiade-al <tiade-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 11:01:34 by tiade-al          #+#    #+#             */
-/*   Updated: 2024/04/23 16:41:11 by tiade-al         ###   ########.fr       */
+/*   Updated: 2024/04/24 11:27:58 by tiade-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*i;
 
-	if(nmemb == 0 || size == 0)
+	if (nmemb == 0 || size == 0)
 		i = malloc(0);
 	else if ((nmemb * size) / nmemb != size)
 		return (NULL);
@@ -29,7 +29,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 		i = malloc(nmemb * size);
 	if (!i)
 		return (NULL);
-	if(nmemb != 0 || size != 0)
+	if (nmemb != 0 || size != 0)
 		ft_bzero(i, nmemb * size);
 	return (i);
 }

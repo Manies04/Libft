@@ -6,7 +6,7 @@
 /*   By: tiade-al <tiade-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 00:21:44 by tiade-al          #+#    #+#             */
-/*   Updated: 2024/04/21 01:59:08 by tiade-al         ###   ########.fr       */
+/*   Updated: 2024/04/24 11:21:00 by tiade-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	str = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (!str)
 		return (NULL);
-	while (str[i] != '\0')
+	while (s[i] != '\0')
 	{
 		str[i] = f(i, s[i]);
 		i++;

@@ -6,7 +6,7 @@
 /*   By: tiade-al <tiade-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 17:45:18 by tiade-al          #+#    #+#             */
-/*   Updated: 2024/04/23 15:11:07 by tiade-al         ###   ########.fr       */
+/*   Updated: 2024/04/24 14:30:51 by tiade-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,28 +22,21 @@
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
-	int		c;
 
-	c = 0;
 	i = 0;
-	while ((s1[c] != '\0' || s2[c] != '\0') && i < n)
+	while ((s1[i] || s2[i]) && i < n)
 	{
-		if (s1[c] < s2[c])
-			return (-1);
-		if (s1[c] > s2[c])
-			return (1);
-		c++;
+		if (s1[i] != s2[i])
+			return (((unsigned char *)s1)[i] - ((unsigned char *)s2)[i]);
 		i++;
 	}
 	return (0);
 }
 /* int	main(void)
 {
-	int	d = ft_strncmp("Tripouille", "TripouilleX", 42);
+	int	d = ft_strncmp("test\0", "test\200", 6);
 	printf("The Result is: %d\n", d);
-	int	a = strncmp("Tripouille", "TripouilleX", 42);
+	int	a = strncmp("test\0", "test\200", 6);
 	printf("The Result is: %d\n", a);
-
 	return (0);
-}
- */
+} */

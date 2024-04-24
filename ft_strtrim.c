@@ -6,7 +6,7 @@
 /*   By: tiade-al <tiade-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 13:16:26 by tiade-al          #+#    #+#             */
-/*   Updated: 2024/04/21 02:02:28 by tiade-al         ###   ########.fr       */
+/*   Updated: 2024/04/24 11:00:37 by tiade-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,19 +24,20 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	j;
 	char	*str;
 
-	str = 0;
-	if (*s1 != '\0' && *set != '\0')
-	{
-		i = 0;
-		j = ft_strlen(s1) - 1;
-		while (s1[i] && ft_strchr(set, s1[i]))
-			i++;
-		while (s1[j] && ft_strchr(set, s1[j]) && j >= i)
-			j--;
-		str = (char *)malloc(sizeof(char) * (j - i + 2));
-		if (str)
-			ft_strlcpy(str, &s1[i], j - i + 2);
-	}
+	i = 0;
+	if (!s1 || !set)
+		return (NULL);
+	while (s1[i] && ft_strchr(set, s1[i]))
+		i++;
+	j = ft_strlen(s1);
+	while (j > i && ft_strchr(set, s1[j - 1]))
+		j--;
+	if (j < i)
+		return (ft_strdup(""));
+	str = (char *)malloc(sizeof(char) * (j - i + 1));
+	if (!str)
+		return (NULL);
+	ft_strlcpy(str, &s1[i], j - i + 1);
 	return (str);
 }
 /*int main(void)

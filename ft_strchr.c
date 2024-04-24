@@ -6,12 +6,12 @@
 /*   By: tiade-al <tiade-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 12:51:36 by tiade-al          #+#    #+#             */
-/*   Updated: 2024/04/23 15:57:30 by tiade-al         ###   ########.fr       */
+/*   Updated: 2024/04/24 10:50:16 by tiade-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/**@brief The strchr() function locates the first occurrence of c (converted to
+/**@brief The strchr() function locates the first occurrence of i (converted to
  *  a char) in the string pointed to by s. The terminating null character is
  * considered to be part of the string.
  *@param s: The string to search.

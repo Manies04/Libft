@@ -6,7 +6,7 @@
 /*   By: tiade-al <tiade-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 22:15:55 by tiade-al          #+#    #+#             */
-/*   Updated: 2024/04/21 01:53:08 by tiade-al         ###   ########.fr       */
+/*   Updated: 2024/04/24 11:30:04 by tiade-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,10 @@
 void	ft_putnbr_fd(int n, int fd)
 {
 	if (n == -2147483648)
+	{
 		ft_putstr_fd("-2147483648", fd);
+		return ;
+	}
 	if (n < 0)
 	{
 		ft_putchar_fd('-', fd);

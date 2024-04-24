@@ -6,7 +6,7 @@
 /*   By: tiade-al <tiade-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:57:14 by tiade-al          #+#    #+#             */
-/*   Updated: 2024/04/21 01:57:49 by tiade-al         ###   ########.fr       */
+/*   Updated: 2024/04/24 12:06:40 by tiade-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
  *@param str: The string to calculate the length of.
  *@return The number of characters in the string.
 */
-int	ft_strlen(const char *str)
+size_t	ft_strlen(const char *str)
 {
 	int	i;
 

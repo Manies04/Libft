@@ -6,7 +6,7 @@
 /*   By: tiade-al <tiade-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 14:07:09 by tiade-al          #+#    #+#             */
-/*   Updated: 2024/04/23 17:08:43 by tiade-al         ###   ########.fr       */
+/*   Updated: 2024/04/24 12:54:58 by tiade-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,31 +21,29 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;
-	size_t	j;
 	char	*str;
 
-	str = malloc(sizeof(*s) * (len + 1));
-	if (str == 0)
+	if (!s || start >= ft_strlen(s) || !len)
+		return (ft_strdup(""));
+	if (start + len > ft_strlen(s))
+		len = ft_strlen(s) - start;
+	str = malloc(sizeof(char) * (len + 1));
+	if (!str)
 		return (NULL);
 	i = 0;
-	j = 0;
-	while (s[i])
+	while (i < len)
 	{
-		if (i >= start && j < len)
-		{
-			str[j] = s[i];
-			j++;
-		}
+		str[i] = s[start + i];
 		i++;
 	}
-	str[j] = '\0';
+	str[i] = '\0';
 	return (str);
 }
-// int main(void)
-// {
-// 	char *d = ft_substr("Batata", 0, 20);
-// 	printf("Result is: %s\n", d);
-// 	return (0);
-// }
-// l21 - size of char is 1
-// l28 - start 0 para cima e o j - que a len para '\0'
+/* int main(void)
+{
+	char *d = ft_substr("tripouille", 100, 1);
+	printf("Result is: %s\n", d);
+	printf("Tester will say: %d\n", !strcmp(d, "")); 
+	free(d);
+	return (0);
+} */
