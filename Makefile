@@ -6,83 +6,46 @@
 #    By: tiade-al <tiade-al@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/15 11:41:01 by tiade-al          #+#    #+#              #
-#    Updated: 2024/04/23 16:53:57 by tiade-al         ###   ########.fr        #
+#    Updated: 2024/04/30 17:13:14 by tiade-al         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-Library = libft.a
+SRCS = ft_memset.c ft_isalnum.c ft_isprint.c ft_memcmp.c\
+ft_strncmp.c ft_substr.c ft_atoi.c ft_isalpha.c ft_strlcpy.c\
+ft_strchr.c  ft_strlcpy.c ft_putnbr_fd.c\
+ft_strnstr.c ft_tolower.c ft_bzero.c   ft_isascii.c ft_itoa.c\
+ft_memmove.c ft_strdup.c  ft_strlen.c  ft_strrchr.c \
+ft_toupper.c ft_calloc.c  ft_isdigit.c ft_memset.c ft_memcpy.c \
+ft_split.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c\
+ft_striteri.c ft_memchr.c ft_strlcat.c\
+ft_strjoin.c ft_strtrim.c ft_strmapi.c
 
-files = ft_bzero.c\
-		ft_isalnum.c\
-		ft_isalpha.c\
-		ft_isascii.c\
-		ft_isdigit.c\
-		ft_isprint.c\
-		ft_memcpy.c\
-		ft_memmove.c\
-		ft_memset.c\
-		ft_strlen.c\
-		ft_strlcpy.c\
-		ft_strlcat.c\
-		ft_toupper.c\
-		ft_tolower.c\
-		ft_strchr.c\
-		ft_strrchr.c\
-		ft_strncmp.c\
-		ft_memchr.c\
-		ft_memcmp.c\
-		ft_strnstr.c\
-		ft_atoi.c\
-		ft_calloc.c\
-		ft_strdup.c\
-		ft_substr.c\
-		ft_strjoin.c\
-		ft_strtrim.c\
-		ft_split.c\
-		ft_itoa.c\
-		ft_strmapi.c\
-		ft_striteri.c\
-		ft_putchar_fd.c\
-		ft_putstr_fd.c\
-		ft_putendl_fd.c\
-		ft_putnbr_fd.c\
+OBJS			= $(SRCS:.c=.o)
 
-bonus = ft_lstnew.c\
-		ft_lstadd_front.c\
-		ft_lstsize.c\
-		ft_lstlast.c\
-		ft_lstadd_back.c\
-		ft_lstdelone.c\
-		ft_lstclear.c\
-		ft_lstiter.c\
-		ft_lstmap.c\
+BONUS			=	ft_lstsize.c ft_lstnew.c ft_lstadd_front.c ft_lstlast.c\
+ft_lstadd_back.c ft_lstdelone.c ft_lstiter.c ft_lstiter.c ft_lstmap.c ft_lstclear.c
 
-Compiler = cc
+BONUS_OBJ		= $(BONUS:.c=.o)
 
-CmpFlags = -Wall -Wextra -Werror
+CC				= cc
+RM				= rm -f
+CFLAGS			= -Wall -Wextra -Werror 
 
-OFILES = $(files:.c=.o)
+NAME			= libft.a
 
-OBONUS = $(bonus:.c=.o)
+all:			$(NAME)
+$(NAME):		$(OBJS)
+				ar rcs $(NAME) $(OBJS)
 
-NAME = $(Library)
-
-$(NAME): $(OFILES) $(OBONUS)
-	$(Compiler) $(CmpFlags) -c $(files) $(bonus) -I./
-	ar -rc $(Library) $(OFILES) $(OBONUS)
-
-all: $(NAME)
-
-bonus: $(OBONUS) $(BONUS)
-	ar -rc $(NAME) $(OBONUS) $(BONUS)
+bonus:			$(BONUS) $(BONUS_OBJ) 
+				ar rcs $(NAME) $(BONUS_OBJ)
 
 clean:
-	rm -f $(NAME)
-	rm -f $(OFILES) $(OBONUS)
+				$(RM) $(OBJS) $(BONUS_OBJ)
 
-fclean: clean
-	rm -f $(NAME)
+fclean:			clean
+				$(RM) $(NAME)
 
-re: fclean all
+re:				fclean $(NAME) 
 
-.PHONY: all, clean, fclean, re
+.PHONY:			all clean fclean re bonus
